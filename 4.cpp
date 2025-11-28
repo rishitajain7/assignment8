@@ -12,8 +12,12 @@ Node *right;
     }};
 
 bool isBST(Node* root, int minVal, int maxVal){
-    if(!root) return true;
-    if(root->data < minVal || root->data > maxVal) return false;
+    if(!root) {
+        return true;
+    }
+    if(root->data < minVal || root->data > maxVal) {
+        return false;
+    }
     return isBST(root->left, minVal, root->data - 1) &&
            isBST(root->right, root->data + 1, maxVal);
 }
